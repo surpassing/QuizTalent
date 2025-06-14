@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title"></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 题库选择界面 -->
+    <div id="category-select-screen" class="screen active">
+        <h1 id="category-select-title">选择题库</h1>
+        <p id="category-select-subtitle">请选择你想要挑战的题库</p>
+        <div id="categories-grid" class="categories-grid"></div>
+    </div>
+
+
+
+    <!-- 题库首页 -->
+    <div id="home-screen" class="screen">
+        <button id="back-to-categories" class="back-btn" title="返回题库选择">返回题库选择</button>
+        <h1 id="game-title" class="game-title"></h1>
+        <div class="stats-container">
+            <div class="stat-item">
+                <span id="current-level-label"></span>
+                <span id="current-level-display">1</span>
+            </div>
+            <div class="stat-item">
+                <span id="total-levels-label"></span>
+                <span>200</span>
+            </div>
+            <div class="stat-item">
+                <span id="total-stars-label"></span>
+                <span id="total-stars">0</span>
+            </div>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+                <div class="progress-text">
+                    <span id="progress-percentage">0%</span>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button id="continue-btn" class="game-btn primary" title="开始或继续游戏">开始游戏</button>
+            <button id="level-select-btn" class="game-btn secondary" title="选择关卡">选择关卡</button>
+            <button id="reset-btn" class="game-btn danger" title="重置当前题库进度">重置进度</button>
+        </div>
+    </div>
+
+    <!-- 关卡选择界面 -->
+    <div id="level-select-screen" class="screen">
+        <button id="back-to-home" class="back-btn" title="返回">返回</button>
+        <h1 id="level-select-title" class="screen-title">选择关卡</h1>
+        <div id="levels-grid" class="levels-grid"></div>
+    </div>
+
+    <!-- 游戏界面 -->
+    <div id="game-screen" class="screen">
+        <button id="back-to-home-from-game" class="back-btn" title="返回首页">返回</button>
+        <div class="game-header">
+            <div class="level-info">
+                <span id="level-label"></span>
+                <span id="current-level">1</span>
+            </div>
+            <div class="attempts-info">
+                <span id="attempts-label"></span>
+                <span id="attempts">0</span>
+            </div>
+        </div>
+        <div class="question-container"></div>
+        <div id="options-container" class="options-container"></div>
+        <div id="feedback-container" class="feedback-container"></div>
+    </div>
+
+    <!-- 结果弹窗 -->
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <div id="result-stars" class="result-stars"></div>
+            <div id="result-text" class="result-text"></div>
+            <div class="modal-buttons">
+                <button id="next-level-btn" class="game-btn primary" title="进入下一关">下一关</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 重置选项弹窗 -->
+    <div id="reset-modal" class="modal">
+        <div class="modal-content">
+            <h3 id="reset-modal-title">重置选项</h3>
+            <div class="modal-buttons">
+                <button id="reset-all-btn" class="game-btn danger">重置全部进度</button>
+                <button id="reset-current-btn" class="game-btn warning">仅重置当前题库</button>
+                <button id="reset-cancel-btn" class="game-btn secondary">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
